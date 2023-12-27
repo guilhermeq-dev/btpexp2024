@@ -1,0 +1,62 @@
+<mvc:View controllerName="com.lab2dev.productlist.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <IconTabBar 
+            id="iconTabHeader" 
+            class="sapUiResponsiveContentPaddnig sapUiNoContentPadding"
+            select="onTabSelect"
+            selectedKey="administration">
+            <layoutData>
+                <OverflowToolbarLayoutData priority="NeverOverflow" shrinkable="false"></OverflowToolbarLayoutData>
+            </layoutData>
+            <items>
+                <IconTabFilter key="register" text="Cadastro">
+                    <items>
+                        <IconTabFilter key="Home" text="Novos usuários">        
+                        </IconTabFilter>
+                        <IconTabFilter text="Aprovação">    
+                        </IconTabFilter>
+                    </items>
+                </IconTabFilter>
+                <IconTabFilter key="administration" text="Administração">
+                    <items>
+                        <IconTabFilter key="Event" text="Evento">                      
+                        </IconTabFilter>
+                        <IconTabFilter text="Agendas">                                
+                        </IconTabFilter>
+                        <IconTabFilter text="Sessões">                              
+                        </IconTabFilter>
+						<IconTabFilter text="Empresas">                             
+                        </IconTabFilter>
+                        <IconTabFilter text="Pacotes">                              
+                        </IconTabFilter>
+                        <IconTabFilter text="Repositório">     
+                        </IconTabFilter>
+                        <IconTabFilter text="Usuários">
+                        </IconTabFilter>
+                    </items>
+                </IconTabFilter>
+                <IconTabFilter key="gamification" text="Gamificação">
+                    <items>
+                        <IconTabFilter text="Tarefas">
+                        </IconTabFilter>
+                        <IconTabFilter text="Trilhas">
+                        </IconTabFilter>
+                    </items>
+                </IconTabFilter>
+                <IconTabFilter key="reports" text="Relatórios">
+                    <items>
+                        <IconTabFilter text="Ranking">
+                        </IconTabFilter>
+                        <IconTabFilter text="Check in">
+                        </IconTabFilter>
+                        <IconTabFilter text="Feedbacks">
+                        </IconTabFilter>
+                    </items>
+                </IconTabFilter>
+            </items>
+        </IconTabBar>
+    <App id="app">
+    </App>
+</mvc:View>

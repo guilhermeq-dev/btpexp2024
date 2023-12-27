@@ -1,0 +1,48 @@
+<core:FragmentDefinition xmlns:m="sap.m"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core">
+  <m:Dialog id="formDialog" showHeader="true" title="Editar dados" contentWidth="700px" contentHeight="210px">
+    <m:content>
+      <m:VBox id="formContainer">
+        <f:SimpleForm id="SimpleFormChangeColumn_twoGroups234" editable="true" layout="ColumnLayout" labelSpanXL="12" labelSpanL="12" labelSpanM="3" labelSpanS="12" adjustLabelSpan="true" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsM="2" columnsL="2" columnsXL="2">
+          <f:content>
+            <m:Label text="Nome do evento" />
+            <m:Input value="{editData>/title}" placeholder="Texto" />
+            <m:Label text="Descrição" />
+            <m:Input value="{editData>/subtitle}" placeholder="Texto"/>
+            <m:Label text="Objetivo" />
+            <m:Input value="{editData>/objective}" placeholder="Texto"/>
+            <m:Label text="Data" />
+            <m:DatePicker
+                    id="datePicker"
+                    value="{editData>/date}"
+                    change="onDateChange"
+                    displayFormat="dd/MM/yyyy"
+                    valueFormat="dd/MM/yyyy"
+                    placeholder="Selecione uma data"/>
+            <m:Label text="Horário" />
+            <m:TimePicker
+                    id="timePicker"
+                    value="{editData>/time}"
+                    change="onTimeChange"
+                    placeholder="Selecione um horário"
+                    displayFormat="HH:mm"
+                    valueFormat="HH:mm"/>
+            <m:Label text="Local" />
+            <m:Input value="{editData>/location}" placeholder="Texto"/>
+          </f:content>
+        </f:SimpleForm>
+      </m:VBox>
+    </m:content>
+    <m:footer>
+      <m:Toolbar>
+        <m:content>
+          <m:ToolbarSpacer />
+          <m:Button text="Salvar Alterações" press="onEditData" type="Emphasized" />
+          <m:Button text="Cancelar" press="onCloseEdit" type="Ghost" />
+        </m:content>
+      </m:Toolbar>
+    </m:footer>
+  </m:Dialog>
+</core:FragmentDefinition>

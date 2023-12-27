@@ -1,0 +1,15 @@
+<mvc:View controllerName="com.lab2dev.productlist.controller.VisitorGuide"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns:core="sap.ui.core"
+	xmlns:m="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:grid="sap.ui.layout.cssgrid"
+	xmlns:f="sap.f"
+	xmlns:t="sap.tnt"
+	xmlns="sap.ui.webc.main" height="100%">
+	<m:Page showHeader="true" enableScrolling="true" navButtonPress="onNavBack" showNavButton="true">
+		<m:content>
+			
+		</m:content>
+	</m:Page>
+</mvc:View>
