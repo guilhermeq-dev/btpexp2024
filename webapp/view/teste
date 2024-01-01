@@ -1,16 +1,4 @@
-<mvc:View controllerName="com.lab2dev.productlist.controller.VisitorGuide"
-    xmlns:core="sap.ui.core"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns:main="sap.ui.webc.main"
-    xmlns="sap.m"
-    xmlns:form="sap.ui.layout.form"
-    xmlns:l="sap.ui.layout"
-    xmlns:f="sap.f"
-    height="100%">
-	<Page showHeader="true" enableScrolling="true" navButtonPress="onNavBack" showNavButton="true">
-		<content>
-			<Panel width="auto" backgroundDesign="Transparent" class="sapUiResponsiveContentPadding">
-				<main:Card>
+<main:Card>
 					<HBox>
 						<HBox>
 							<VBox class="sapUiLargeMarginEnd" width="410px">	
@@ -82,7 +70,3 @@
 						</HBox>
 					</HBox>	
 				</main:Card>
-			</Panel>
-		</content>
-	</Page>
-</mvc:View>

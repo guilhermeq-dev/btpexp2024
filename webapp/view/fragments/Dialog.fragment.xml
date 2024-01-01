@@ -7,30 +7,32 @@
       <m:VBox id="formContainer">
         <f:SimpleForm id="SimpleFormChangeColumn_twoGroups234" editable="true" layout="ColumnLayout" labelSpanXL="12" labelSpanL="12" labelSpanM="3" labelSpanS="12" adjustLabelSpan="true" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsM="2" columnsL="2" columnsXL="2">
           <f:content>
-            <m:Label text="Nome do evento" />
-            <m:Input value="{editData>/title}" placeholder="Texto" />
-            <m:Label text="Descrição" />
-            <m:Input value="{editData>/subtitle}" placeholder="Texto"/>
-            <m:Label text="Objetivo" />
-            <m:Input value="{editData>/objective}" placeholder="Texto"/>
-            <m:Label text="Data" />
+            <m:Label required="true" text="Nome do evento" />
+            <m:Input id="teste" required="true" value="{editData>/title}" placeholder="Texto" />
+            <m:Label required="true" text="Descrição" />
+            <m:Input required="true" value="{editData>/subtitle}" placeholder="Texto"/>
+            <m:Label required="true" text="Objetivo" />
+            <m:Input required="true" value="{editData>/objective}" placeholder="Texto"/>
+            <m:Label required="true" text="Data" />
             <m:DatePicker
+                    required="true"
                     id="datePicker"
                     value="{editData>/date}"
                     change="onDateChange"
                     displayFormat="dd/MM/yyyy"
                     valueFormat="dd/MM/yyyy"
                     placeholder="Selecione uma data"/>
-            <m:Label text="Horário" />
+            <m:Label required="true" text="Horário" />
             <m:TimePicker
+                    required="true"
                     id="timePicker"
                     value="{editData>/time}"
                     change="onTimeChange"
                     placeholder="Selecione um horário"
                     displayFormat="HH:mm"
                     valueFormat="HH:mm"/>
-            <m:Label text="Local" />
-            <m:Input value="{editData>/location}" placeholder="Texto"/>
+            <m:Label required="true" text="Local" />
+            <m:Input required="true" value="{editData>/location}" placeholder="Texto"/>
           </f:content>
         </f:SimpleForm>
       </m:VBox>

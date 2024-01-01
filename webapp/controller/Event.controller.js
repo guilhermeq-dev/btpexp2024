@@ -1,12 +1,13 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
-    "com/lab2dev/productlist/model/models"
+    "com/lab2dev/productlist/model/models",
+    "sap/m/MessageToast"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel, models) {
+    function (Controller, JSONModel, models, MessageToast) {
         "use strict";
 
         return Controller.extend("com.lab2dev.productlist.controller.Event", {
@@ -41,6 +42,13 @@ sap.ui.define([
           },
             onEditData: function () {
                 const editData = this.getView().getModel("editData").getData();
+                const { title, subtitle, objective, date, time, location } = editData;
+
+                if (!title || !subtitle || !objective || !date || !time || !location) {
+
+                  return MessageToast.show("Preencha todos os campos obrigatórios!")
+
+              } else {
 
                 const aInfos = [
                   {
@@ -51,16 +59,19 @@ sap.ui.define([
                 this.getView().getModel("panelInfos").setData(aInfos);
 
                 this.dialog.close();
+
+              }
           },
             onCloseEdit: function () {
-                this.dialog.close();
+
+              this.dialog.close();
+
           },
             onPressShowAll: function () {
 
               const sponsors = models.sponsors();
               this.getView().getModel("aSponsors").setData(sponsors);
-              
-
+            
           },
             onNavTo: function () {
                 //Acesso ao Component
