@@ -2,6 +2,8 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:main="sap.ui.webc.main"
     xmlns:f="sap.f"
     xmlns:core="sap.ui.core"
     xmlns:grid="sap.ui.layout.cssgrid">
@@ -15,66 +17,78 @@
         <content>
             <Panel width="auto" backgroundDesign="Transparent" class="sapUiResponsiveContentPadding">
             
-				<f:GridList id="infoList" items="{panelInfos>/}">
-					<f:GridListItem>
-                		<VBox >
-							<HBox class="sapUiSmallMarginTop sapUiSmallMarginBegin sapUiTinyMarginBottom" justifyContent="SpaceBetween">
-                                <HBox>
-                                    <VBox class="sapUiMediumMarginEnd" width="385px">	
-                                        <Title text="{panelInfos>title}" titleStyle="H5" wrapping="true"/>
-                                        <Label text="{panelInfos>subtitle}" wrapping="true" class="sapUiSmallMarginBottom"></Label>
-                                        <HBox >
-                                            <core:Icon class="sapUiTinyMarginEnd" src="sap-icon://goal"></core:Icon>
-                                            <Title text="Objetivo" titleStyle="H6" class="sapUiTinyMarginBottom"></Title>
-                                        </HBox>
-                                        <Label wrapping="true" text="{panelInfos>objective}"></Label>
-                                    </VBox>
-                                    <VBox class="sapUiLargeMarginBegin sapUiSmallMarginEnd" width="250px">	
-                                        <Title class="sapUiSmallMarginBottom" text="Informações gerais" titleStyle="H6" wrapping="true" />
-                                        <HBox >
-                                            <core:Icon src="sap-icon://appointment-2"></core:Icon>
-                                            <Label class="sapUiTinyMarginBegin" text="Data" wrapping="true"></Label>
-                                        </HBox>
-                                        <Label text="{panelInfos>date}" class="sapUiTinyMarginBottom"></Label>
-                                        <HBox >
-                                            <core:Icon src="sap-icon://away"></core:Icon>
-                                            <Label class="sapUiTinyMarginBegin" text="Horário" wrapping="true"></Label>
-                                        </HBox>
-                                        <Label text="{panelInfos>time}" class="sapUiTinyMarginBottom"></Label>
-                                        <HBox >
-                                            <core:Icon src="sap-icon://map-fill"></core:Icon>
-                                            <Label class="sapUiTinyMarginBegin" text="Local" wrapping="true"></Label>
-                                        </HBox>
-                                        <Label text="{panelInfos>location}"></Label>
-                                    </VBox>
-                                    <VBox class="sapUiSmallMarginEnd" width="140px">	
-                                        <Title class="sapUiSmallMarginBottom" text="Serviços disponíveis" titleStyle="H6"  />
-                                         <HBox class="sapUiTinyMarginBottom">
-                                            <core:Icon src="sap-icon://internet-browser"></core:Icon>
-                                            <Label class="sapUiTinyMarginBegin" text="Wi-fi" wrapping="true"></Label>
-                                        </HBox>
-                                        <HBox class="sapUiTinyMarginBottom">
-                                            <core:Icon src="sap-icon://disconnected"></core:Icon>
-                                            <Label class="sapUiTinyMarginBegin" text="Estações de carregamento" ></Label>
-                                        </HBox>
-                                        <HBox class="sapUiTinyMarginBottom">
-                                            <core:Icon src="sap-icon://nutrition-activity"></core:Icon>
-                                            <Label class="sapUiTinyMarginBegin" text="Refeições no local" wrapping="true"></Label>
-                                        </HBox>
-                                        <HBox >
-                                            <core:Icon src="sap-icon://paint-bucket"></core:Icon>
-                                            <Label class="sapUiTinyMarginBegin" text="Banheiros" wrapping="true"></Label>
-                                        </HBox>
-                                    </VBox>    
-                                </HBox>
-                                <HBox>
-								<Button class="sapUiTinyMarginEnd" width="auto" type="Emphasized" text="Editar dados" press="openEditModal"/>
-								<Button class="sapUiTinyMarginEnd" width="auto" type="Emphasized" text="Visitor guide" icon="sap-icon://forward" iconFirst="false" press="onNavTo"/>
-                                </HBox>
-							</HBox>                      
-						</VBox>
-                    </f:GridListItem>
-                </f:GridList>
+				<main:Card>
+					<HBox>
+						<HBox>
+							<VBox class="sapUiLargeMarginEnd" width="410px">	
+								<form:SimpleForm>
+									<form:content>
+										<Title text="{panelInfos>/title}" titleStyle="H5" wrapping="true"/>
+										<Text text="{panelInfos>/subtitle}" wrapping="true" class="sapUiSmallMarginBottom"></Text>
+											<HBox >
+													<core:Icon class="sapUiTinyMarginEnd" src="sap-icon://goal"></core:Icon>
+												<Title text="Objetivo" titleStyle="H6" class="sapUiTinyMarginBottom"></Title>
+											</HBox>
+										<Text wrapping="true" text="{panelInfos>/objective}"></Text>
+									</form:content>
+								</form:SimpleForm>
+							</VBox>
+						</HBox>
+						<HBox>
+							<VBox width="250px">
+								<form:SimpleForm>
+									<form:content>
+										<Title class="sapUiTinyMarginBottom" text="Informações gerais" titleStyle="H6" wrapping="true" />
+										<HBox >
+											<core:Icon src="sap-icon://appointment-2"></core:Icon>
+											<Label class="sapUiTinyMarginBegin" text="Data" wrapping="true"></Label>
+										</HBox>
+										<Text text="{panelInfos>/date}" class="sapUiTinyMarginBottom"></Text>
+										<HBox >
+											<core:Icon src="sap-icon://away"></core:Icon>
+											<Label class="sapUiTinyMarginBegin" text="Horário" wrapping="true"></Label>
+										</HBox>
+										<Text text="{panelInfos>/time}" class="sapUiTinyMarginBottom"></Text>
+										<HBox >
+											<core:Icon src="sap-icon://map-fill"></core:Icon>
+											<Label class="sapUiTinyMarginBegin" text="Local" wrapping="true"></Label>
+										</HBox>
+										<Text text="{panelInfos>/location}"></Text>
+									</form:content>
+								</form:SimpleForm>
+							</VBox>
+						</HBox>
+						<HBox>
+							<VBox width="240px" class="sapUiSmallMarginEnd">
+								<form:SimpleForm>
+									<form:content>
+										<Title class="sapUiTinyMarginBottom" text="Serviços disponíveis" titleStyle="H6"  />
+										<HBox class="sapUiTinyMarginBottom">
+											<core:Icon src="sap-icon://internet-browser"></core:Icon>
+											<Label class="sapUiTinyMarginBegin" text="Wi-fi" wrapping="true"></Label>
+										</HBox>
+										<HBox class="sapUiTinyMarginBottom">
+											<core:Icon src="sap-icon://disconnected"></core:Icon>
+											<Label class="sapUiTinyMarginBegin" text="Estações de carregamento" ></Label>
+										</HBox>
+										<HBox class="sapUiTinyMarginBottom">
+											<core:Icon src="sap-icon://nutrition-activity"></core:Icon>
+											<Label class="sapUiTinyMarginBegin" text="Refeições no local" wrapping="true"></Label>
+										</HBox>
+										<HBox >
+											<core:Icon src="sap-icon://paint-bucket"></core:Icon>
+											<Label class="sapUiTinyMarginBegin" text="Banheiros" wrapping="true"></Label>
+										</HBox>
+									</form:content>
+								</form:SimpleForm>
+							</VBox>
+						</HBox>
+						<HBox >					
+							<Button class="sapUiTinyMarginTop sapUiSmallMarginBegin sapUiTinyMarginEnd" width="auto" type="Emphasized" text="Editar dados" press="openEditModal" />
+							<Button class="sapUiTinyMarginTop sapUiSmallMarginEnd" width="auto" type="Emphasized" text="Visitor guide" icon="sap-icon://forward" iconFirst="false" press="onNavTo" />
+						</HBox>
+					</HBox>	
+				</main:Card>
 			</Panel>
             <l:VerticalLayout class="sapUiMediumMarginBegin" width="100%">
                 <HBox justifyContent="SpaceBetween">    

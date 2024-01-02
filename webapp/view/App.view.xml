@@ -2,11 +2,12 @@
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <IconTabBar 
-            id="iconTabHeader" 
-            class="sapUiResponsiveContentPaddnig sapUiNoContentPadding"
-            select="onTabSelect"
-            selectedKey="administration">
+    <VBox>
+        <IconTabBar 
+                id="iconTabHeader" 
+                class="sapUiResponsiveContentPaddnig sapUiNoContentPadding"
+                select="onTabSelect"
+                selectedKey="administration">
             <layoutData>
                 <OverflowToolbarLayoutData priority="NeverOverflow" shrinkable="false"></OverflowToolbarLayoutData>
             </layoutData>
@@ -27,7 +28,7 @@
                         </IconTabFilter>
                         <IconTabFilter text="Sessões">                              
                         </IconTabFilter>
-						<IconTabFilter text="Empresas">                             
+                        <IconTabFilter text="Empresas">                             
                         </IconTabFilter>
                         <IconTabFilter text="Pacotes">                              
                         </IconTabFilter>
@@ -59,4 +60,5 @@
         </IconTabBar>
     <App id="app">
     </App>
+    </VBox>
 </mvc:View>

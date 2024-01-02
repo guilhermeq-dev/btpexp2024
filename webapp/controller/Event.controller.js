@@ -34,7 +34,7 @@ sap.ui.define([
 
                 const currentData = this.getView().getModel("panelInfos").getData();
 
-                const oEditModel = new JSONModel(currentData[0]);
+                const oEditModel = new JSONModel(currentData);
                 
                 this.getView().setModel(oEditModel, "editData");
 
@@ -50,14 +50,14 @@ sap.ui.define([
 
               } else {
 
-                const aInfos = [
+                const aInfos = 
                   {
                     ...editData
-                  },
-                ];
-
+                  }
+                ;
+                debugger
                 this.getView().getModel("panelInfos").setData(aInfos);
-
+                
                 this.dialog.close();
 
               }
