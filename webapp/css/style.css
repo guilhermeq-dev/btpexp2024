@@ -1,0 +1,7 @@
+.sapMObjStatusInverted.sapMObjStatusInformation .sapMObjStatusText {
+    text-shadow: 0 0 0.125rem #fff;
+    background-color: #AF1280;
+    color: white;
+    border-color: #AF1280;
+    font-weight: normal;
+}

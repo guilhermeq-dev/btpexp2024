@@ -1,0 +1,145 @@
+<mvc:View controllerName="com.lab2dev.productlist.controller.Sponsors"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:main="sap.ui.webc.main"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    xmlns:grid="sap.ui.layout.cssgrid">
+    <Page id="page" title="{i18n>title}" showHeader="false" enableScrolling="true">
+        <HeaderContainer>
+            <VBox class="sapUiTinyMarginBegin"> 
+                <Title text="Administração" class="sapUiSmallMarginTop sapUiSmallMarginBegin sapUiTinyMarginTopBottom textBold" titleStyle="H3"/>
+                <Title text="Evento > Patrocinadores" class="sapUiSmallMarginBegin" titleStyle="H4"/>
+            </VBox>
+        </HeaderContainer>
+        <content>
+            <Panel width="auto" backgroundDesign="Transparent" class="sapUiResponsiveContentPadding">
+				<main:Card width="380px">
+					<VBox>
+                        <HBox class="sapUiSmallMarginTop sapUiSmallMarginBegin" justifyContent="SpaceBetween">
+                            <HBox>
+                                <Avatar src="../img/lab2dev.png" displaySize="L" class="sapUiSmallMarginEnd" />
+                                <VBox class="sapUiSmallMarginEnd" width="250px">	
+                                    <Title text="Lab2dev" titleStyle="H5" wrapping="true" />
+                                    <Label text="LAB2DEV SOLUÇÕES EM TECNOLOGIA LTDA" wrapping="true"></Label>
+                                    <ObjectStatus class="sapUiSmallMarginBottom"
+                                                    text="PATROCINADOR PRINCIPAL"
+                                                    inverted="true"
+                                                    state="Information" />
+                                </VBox>
+                            </HBox>
+                        </HBox>                      
+                    </VBox>
+				</main:Card>
+			</Panel>
+            <l:VerticalLayout class="sapUiMediumMarginBegin" width="100%">
+                <HBox justifyContent="SpaceBetween">    
+                    <HBox justifyContent="Start">
+                        <Title text="Patrocinadores Diamante" titleStyle="H4" />
+                    </HBox>
+                </HBox> 
+		    </l:VerticalLayout>
+            <Panel width="auto" backgroundDesign="Transparent" class="sapUiResponsiveContentPadding sapUiContentPadding">
+				<f:GridList items="{aSponsors>/}">
+					<f:customLayout>
+						<grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(13rem, 1fr))" gridGap="1.0rem" />
+					</f:customLayout>
+					<f:GridListItem>
+						<VBox class="sapUiSmallMargin" wrap="Wrap" width="800px">
+							<HBox justifyContent="Start">
+								<Avatar src="{aSponsors>Logo}" class="sapUiSmallMarginEnd" />
+								<VBox justifyContent="Center">
+									<Title text="{aSponsors>Empresa}" wrapping="true" />
+									<Label text="{aSponsors>Estado}" wrapping="true" />
+								</VBox>
+							</HBox>
+						</VBox>
+					</f:GridListItem>
+				</f:GridList>
+			</Panel>
+            <l:VerticalLayout class="sapUiMediumMarginBegin" width="100%">
+                <HBox justifyContent="SpaceBetween">    
+                    <HBox justifyContent="Start">
+                        <Title text="Patrocinadores Ouro" titleStyle="H4" />
+                    </HBox>
+                </HBox> 
+		    </l:VerticalLayout>
+            <Panel width="auto" backgroundDesign="Transparent" class="sapUiResponsiveContentPadding sapUiContentPadding">
+				<f:GridList items="{aSponsors>/}">
+					<f:customLayout>
+						<grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(13rem, 1fr))" gridGap="1.0rem" />
+					</f:customLayout>
+					<f:GridListItem>
+						<VBox class="sapUiSmallMargin" wrap="Wrap" width="800px">
+							<HBox justifyContent="Start">
+								<Avatar src="{aSponsors>Logo}" class="sapUiSmallMarginEnd" />
+								<VBox justifyContent="Center">
+									<Title text="{aSponsors>Empresa}" wrapping="true" />
+									<Label text="{aSponsors>Estado}" wrapping="true" />
+								</VBox>
+							</HBox>
+						</VBox>
+					</f:GridListItem>
+				</f:GridList>
+			</Panel>
+            <l:VerticalLayout class="sapUiMediumMarginBegin" width="100%">
+                <HBox justifyContent="SpaceBetween">    
+                    <HBox justifyContent="Start">
+                        <Title text="Patrocinadores Prata" titleStyle="H4" />
+                    </HBox>
+                </HBox> 
+		    </l:VerticalLayout>
+            <Panel width="auto" backgroundDesign="Transparent" class="sapUiResponsiveContentPadding sapUiContentPadding">
+				<f:GridList items="{aSponsors>/}">
+					<f:customLayout>
+						<grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(13rem, 1fr))" gridGap="1.0rem" />
+					</f:customLayout>
+					<f:GridListItem>
+						<VBox class="sapUiSmallMargin" wrap="Wrap" width="800px">
+							<HBox justifyContent="Start">
+								<Avatar src="{aSponsors>Logo}" class="sapUiSmallMarginEnd" />
+								<VBox justifyContent="Center">
+									<Title text="{aSponsors>Empresa}" wrapping="true" />
+									<Label text="{aSponsors>Estado}" wrapping="true" />
+								</VBox>
+							</HBox>
+						</VBox>
+					</f:GridListItem>
+				</f:GridList>
+			</Panel>
+            <l:VerticalLayout class="sapUiMediumMarginBegin" width="100%">
+                <HBox justifyContent="SpaceBetween">    
+                    <HBox justifyContent="Start">
+                        <Title text="Patrocinadores Bronze" titleStyle="H4" />
+                    </HBox>
+                </HBox> 
+		    </l:VerticalLayout>
+            <Panel width="auto" backgroundDesign="Transparent" class="sapUiResponsiveContentPadding sapUiContentPadding">
+				<f:GridList items="{aSponsors>/}">
+					<f:customLayout>
+						<grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(13rem, 1fr))" gridGap="1.0rem" />
+					</f:customLayout>
+					<f:GridListItem>
+						<VBox class="sapUiSmallMargin" wrap="Wrap" width="800px">
+							<HBox justifyContent="Start">
+								<Avatar src="{aSponsors>Logo}" class="sapUiSmallMarginEnd" />
+								<VBox justifyContent="Center">
+									<Title text="{aSponsors>Empresa}" wrapping="true" />
+									<Label text="{aSponsors>Estado}" wrapping="true" />
+								</VBox>
+							</HBox>
+						</VBox>
+					</f:GridListItem>
+				</f:GridList>
+			</Panel>
+        </content>
+        <footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button type="Emphasized" text="teste" press="teste" />
+			</Toolbar>
+		</footer>
+    </Page>
+</mvc:View>

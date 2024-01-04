@@ -9,7 +9,7 @@
     xmlns:grid="sap.ui.layout.cssgrid">
     <Page id="page" title="{i18n>title}" showHeader="false" enableScrolling="true">
         <HeaderContainer>
-            <VBox class="sapUiSmallMarginBegin"> 
+            <VBox class="sapUiTinyMarginBegin"> 
                 <Title text="Administração" class="sapUiSmallMarginTop sapUiSmallMarginBegin sapUiTinyMarginTopBottom textBold" titleStyle="H3"/>
                 <Title text="Evento > Informações" class="sapUiSmallMarginBegin" titleStyle="H4"/>
             </VBox>
@@ -96,7 +96,7 @@
                         <Title text="Patrocinadores" titleStyle="H3" />
                     </HBox>
                     <HBox justifyContent="End" class="sapUiLargeMarginEnd">
-                        <Button class="sapUiSmallMarginEnd" type="Emphasized" text="Ver todos patrocinadores" press="onPressShowAll"/>
+                        <Button class="sapUiSmallMarginEnd" type="Emphasized" text="Ver todos patrocinadores" press="onNavToSponsors"/>
                     </HBox>
                 </HBox> 
 		    </l:VerticalLayout>
@@ -116,7 +116,7 @@
                                                 class="statusBackground"
                                                 text="{= ${aSponsors>Empresa} === 'Lab2dev' ? 'PATROCINADOR PRINCIPAL' : '' }"
                                                 inverted="true"
-                                                state="Information"/>
+                                                state="Information"/>												
 								</VBox>
 							</HBox>
 						</VBox>

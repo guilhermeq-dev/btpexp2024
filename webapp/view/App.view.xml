@@ -58,7 +58,7 @@
                 </IconTabFilter>
             </items>
         </IconTabBar>
-    <App id="app">
-    </App>
+        <App id="app">
+        </App>
     </VBox>
 </mvc:View>

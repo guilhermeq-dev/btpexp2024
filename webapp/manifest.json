@@ -122,6 +122,13 @@
           "target": [
             "TargetVisitorGuide"
           ]
+        },
+        {
+          "name": "Sponsors",
+          "pattern": "sponsors",
+          "target": [
+            "TargetSponsors"
+          ]
         }
       ],
       "targets": {
@@ -145,6 +152,13 @@
           "clearControlAggregation": false,
           "viewId": "VisitorGuide",
           "viewName": "VisitorGuide"
+        },
+        "TargetSponsors": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Sponsors",
+          "viewName": "Sponsors"
         }
       }
     },

@@ -32,45 +32,51 @@ sap.ui.define([
                   this.getView().addDependent(this.dialog);
                 }
 
-                const currentData = this.getView().getModel("panelInfos").getData();
+                const currentModel = this.getView().getModel("panelInfos").getData();
 
-                const oEditModel = new JSONModel(currentData);
+                const currentData = {}
+
+                Object.assign(currentData, currentModel)
                 
+                const oEditModel = new JSONModel(currentData);
+
                 this.getView().setModel(oEditModel, "editData");
 
                 this.dialog.open();
           },
             onEditData: function () {
-                const editData = this.getView().getModel("editData").getData();
-                const { title, subtitle, objective, date, time, location } = editData;
 
-                if (!title || !subtitle || !objective || !date || !time || !location) {
+                const editData = this.getView().getModel("editData").getData();
+
+                if (Object.values(editData).map(el => el.trim()).includes("")) {
 
                   return MessageToast.show("Preencha todos os campos obrigatórios!")
 
-              } else {
+              }
 
                 const aInfos = 
                   {
                     ...editData
-                  }
-                ;
-                debugger
+                  };
+              
                 this.getView().getModel("panelInfos").setData(aInfos);
                 
                 this.dialog.close();
-
-              }
           },
             onCloseEdit: function () {
-
               this.dialog.close();
 
           },
-            onPressShowAll: function () {
+            onNavToSponsors: function () {
 
-              const sponsors = models.sponsors();
-              this.getView().getModel("aSponsors").setData(sponsors);
+                //Acesso ao Component
+                const oComponent = this.getOwnerComponent()
+
+                //Acesso ao Router
+                const oRouter = oComponent.getRouter();
+
+                //Navegação para a rota RouteDetail
+                oRouter.navTo("Sponsors");
             
           },
             onNavTo: function () {
