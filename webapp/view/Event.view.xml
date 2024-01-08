@@ -18,7 +18,7 @@
             <Panel width="auto" backgroundDesign="Transparent" class="sapUiResponsiveContentPadding">
             
 				<main:Card>
-					<HBox>
+					<HBox justifyContent="SpaceBetween">
 						<HBox>
 							<VBox class="sapUiLargeMarginEnd" width="410px">	
 								<form:SimpleForm>
@@ -83,7 +83,7 @@
 								</form:SimpleForm>
 							</VBox>
 						</HBox>
-						<HBox >					
+						<HBox>					
 							<Button class="sapUiTinyMarginTop sapUiSmallMarginBegin sapUiTinyMarginEnd" width="auto" type="Emphasized" text="Editar dados" press="openEditModal" />
 							<Button class="sapUiTinyMarginTop sapUiSmallMarginEnd" width="auto" type="Emphasized" text="Visitor guide" icon="sap-icon://forward" iconFirst="false" press="onNavTo" />
 						</HBox>
@@ -103,12 +103,12 @@
             <Panel width="auto" backgroundDesign="Transparent" class="sapUiResponsiveContentPadding sapUiContentPadding">
 				<f:GridList id="gridList" items="{aSponsors>/}">
 					<f:customLayout>
-						<grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(14.5rem, 1fr))" gridGap="1.0rem" />
+						<grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(15rem, 1fr))" gridGap="1.0rem" />
 					</f:customLayout>
 					<f:GridListItem>
-						<VBox class="sapUiSmallMargin" wrap="Wrap" width="800px">
+						<VBox class="sapUiSmallMargin" wrap="Wrap" width="15rem">
 							<HBox justifyContent="Start">
-								<Avatar src="{aSponsors>Logo}" class="sapUiSmallMarginEnd" />
+								<Avatar src="{aSponsors>Logo}" displaySize="M" class="sapUiTinyMarginEnd" />
 								<VBox justifyContent="Center">
 									<Title text="{aSponsors>Empresa}" wrapping="true" />
 									<Label text="{aSponsors>Estado}" wrapping="true" />

@@ -2,87 +2,109 @@
     xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns:main="sap.ui.webc.main"
-    xmlns="sap.m"
+	xmlns="sap.ui.table"
+	xmlns:u="sap.ui.unified"
+    xmlns:m="sap.m"
     xmlns:form="sap.ui.layout.form"
     xmlns:l="sap.ui.layout"
     xmlns:f="sap.f"
     height="100%">
-	<Page showHeader="true" enableScrolling="true" navButtonPress="onNavBack" showNavButton="true">
-		<content>
-			<Panel width="auto" backgroundDesign="Transparent" class="sapUiResponsiveContentPadding">
-				<main:Card>
-					<HBox>
-						<HBox>
-							<VBox class="sapUiLargeMarginEnd" width="410px">	
-								<form:SimpleForm>
-									<form:content>
-										<Title text="{panelInfos>/title}" titleStyle="H5" wrapping="true"/>
-										<Text text="{panelInfos>/subtitle}" wrapping="true" class="sapUiSmallMarginBottom"></Text>
-											<HBox >
-													<core:Icon class="sapUiTinyMarginEnd" src="sap-icon://goal"></core:Icon>
-												<Title text="Objetivo" titleStyle="H6" class="sapUiTinyMarginBottom"></Title>
-											</HBox>
-										<Text wrapping="true" text="{panelInfos>/objective}"></Text>
-									</form:content>
-								</form:SimpleForm>
-							</VBox>
-						</HBox>
-						<HBox>
-							<VBox width="250px">
-								<form:SimpleForm>
-									<form:content>
-										<Title class="sapUiTinyMarginBottom" text="Informações gerais" titleStyle="H6" wrapping="true" />
-										<HBox >
-											<core:Icon src="sap-icon://appointment-2"></core:Icon>
-											<Label class="sapUiTinyMarginBegin" text="Data" wrapping="true"></Label>
-										</HBox>
-										<Text text="{panelInfos>/date}" class="sapUiTinyMarginBottom"></Text>
-										<HBox >
-											<core:Icon src="sap-icon://away"></core:Icon>
-											<Label class="sapUiTinyMarginBegin" text="Horário" wrapping="true"></Label>
-										</HBox>
-										<Text text="{panelInfos>/time}" class="sapUiTinyMarginBottom"></Text>
-										<HBox >
-											<core:Icon src="sap-icon://map-fill"></core:Icon>
-											<Label class="sapUiTinyMarginBegin" text="Local" wrapping="true"></Label>
-										</HBox>
-										<Text text="{panelInfos>/location}"></Text>
-									</form:content>
-								</form:SimpleForm>
-							</VBox>
-						</HBox>
-						<HBox>
-							<VBox width="240px" class="sapUiSmallMarginEnd">
-								<form:SimpleForm>
-									<form:content>
-										<Title class="sapUiTinyMarginBottom" text="Serviços disponíveis" titleStyle="H6"  />
-										<HBox class="sapUiTinyMarginBottom">
-											<core:Icon src="sap-icon://internet-browser"></core:Icon>
-											<Label class="sapUiTinyMarginBegin" text="Wi-fi" wrapping="true"></Label>
-										</HBox>
-										<HBox class="sapUiTinyMarginBottom">
-											<core:Icon src="sap-icon://disconnected"></core:Icon>
-											<Label class="sapUiTinyMarginBegin" text="Estações de carregamento" ></Label>
-										</HBox>
-										<HBox class="sapUiTinyMarginBottom">
-											<core:Icon src="sap-icon://nutrition-activity"></core:Icon>
-											<Label class="sapUiTinyMarginBegin" text="Refeições no local" wrapping="true"></Label>
-										</HBox>
-										<HBox >
-											<core:Icon src="sap-icon://paint-bucket"></core:Icon>
-											<Label class="sapUiTinyMarginBegin" text="Banheiros" wrapping="true"></Label>
-										</HBox>
-									</form:content>
-								</form:SimpleForm>
-							</VBox>
-						</HBox>
-						<HBox >					
-							<Button class="sapUiTinyMarginTop sapUiSmallMarginBegin sapUiTinyMarginEnd" width="auto" type="Emphasized" text="Editar dados" press="openEditModal" />
-							<Button class="sapUiTinyMarginTop sapUiSmallMarginEnd" width="auto" type="Emphasized" text="Visitor guide" icon="sap-icon://forward" iconFirst="false" press="onNavTo" />
-						</HBox>
-					</HBox>	
-				</main:Card>
-			</Panel>
-		</content>
-	</Page>
+	<m:Page showHeader="true" enableScrolling="true" navButtonPress="onNavBack" showNavButton="true">
+
+		<l:VerticalLayout class="sapUiSmallMarginBegin sapUiContentPadding" width="auto">
+			<m:Title text="Sessões" titleStyle="H3" />
+		</l:VerticalLayout>
+
+		<m:content>
+			 <m:VBox class="sapUiResponsiveMargin">
+				<Table
+					id="tableID"
+					rows="{companyInfo>/}"
+					selectionMode="None"
+					>
+					<extension>
+						<m:OverflowToolbar >
+							<m:Title class="title" text="Sessões"/>
+							<m:ToolbarSpacer/>
+							<m:SearchField class="searchField" width="14rem" liveChange="onSearch" placeholder="Pesquisar" />
+						</m:OverflowToolbar>
+					</extension>
+					<columns>
+						<Column width="4rem">
+							<m:Label text="ID" />
+							<template>
+								<m:Text text="{companyInfo>companyID}" wrapping="false" />
+							</template>
+						</Column>
+						<Column >
+							<m:Label text="Nome do evento" />
+							<template>
+								<m:Label text="{companyInfo>companyName}"/>
+							</template>
+						</Column>
+						<Column >
+							<m:Label text="Tipo do evento" />
+							<template>
+								<m:Label text="{path: 'companyInfo>corporateCode'}" />
+							</template>
+						</Column>
+						<Column >
+							<m:Label text="Responsável" />
+							<template>
+								<m:Label text="{companyInfo>webSite}" />
+							</template>
+						</Column>
+						<Column >
+							<m:Label text="Sala" />
+							<template>
+								<m:Label text="{companyInfo>email}" />
+							</template>
+						</Column>
+						<Column >
+							<m:Label text="Setor" />
+							<template>
+								<m:Label text="{companyInfo>region}" />
+							</template>
+						</Column>
+						<Column >
+							<m:Label text="Status" />
+							<template>
+								<m:Label text="{companyInfo>region}" />
+							</template>
+						</Column>
+						<Column >
+							<m:Label text="Data/Hora" />
+							<template>
+								<m:Label text="{companyInfo>region}" />
+							</template>
+						</Column>
+						<Column >
+							<m:Label text="Agenda" />
+							<template>
+								<m:Button
+									icon="sap-icon://check-availability"
+									type="Transparent" 
+									press="navCompanyDetail"/>
+							</template>
+						</Column>
+						<Column width="3.1rem" >
+							<template>
+								<m:Button
+									icon="sap-icon://navigation-right-arrow"
+									type="Transparent" 
+									press="navCompanyDetail"/>
+							</template>
+						</Column>
+					</columns>
+				</Table>
+			</m:VBox>
+		</m:content>
+		<m:footer>
+			<m:Toolbar>
+				<m:ToolbarSpacer/>
+				<m:Button type="Emphasized" text="Exportar Excel" icon="sap-icon://excel-attachment" iconFirst="false" press="onPressExport" />
+				<m:Button type="Emphasized" text="Nova sessão" icon="sap-icon://forward" iconFirst="false" press="navToNewSession" />
+			</m:Toolbar>
+		</m:footer>
+	</m:Page>
 </mvc:View>

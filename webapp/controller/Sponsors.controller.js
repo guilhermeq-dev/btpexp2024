@@ -13,7 +13,7 @@ sap.ui.define([
             onInit: function () {
 
                 const sponsors = models.sponsors();
-                const highlights = sponsors.slice(0,5);
+                const highlights = sponsors.slice(0,10);
                 
                 const oModel = new JSONModel(highlights);
                 this.getView().setModel(oModel, "aSponsors");
